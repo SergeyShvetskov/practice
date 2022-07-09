@@ -1,17 +1,31 @@
+:root {
+    --brand-color-white: #ffffff;
+    --brand-color-black: #212121;
+    --brand-color-blact-two: #000000;
+    --brand-color-grey: #757575;
+    --brand-color-blue: #2196F3;
+
+    
+}
+
 body {
     font-family: Roboto, sans-serif;
+    font-weight: 400;
     /* color: #000000; */
+    background: var(--brand-color-white);
 
 }
 h1, h2, h3, h4, h5, h6, ul, p {
-    padding-left: 0;
+    padding: 0;
     margin: 0;
+}
+img {
+    display: block;
 }
 .link-off {
     text-decoration: none;
-    color: #212121;
-    font-size: 14px;
-    font-weight: 500;
+    color: var(--brand-color-black);
+    font-size: 14px;    
 }
 
 .list-off {
@@ -25,10 +39,10 @@ h1, h2, h3, h4, h5, h6, ul, p {
     line-height: 31px;
     /* identical to box height */
     letter-spacing: 0.03em;    
-    color: #000000;
+    color: var(--brand-color-blact-two);
 }
 .logo span {
-    color: #2196F3;
+    color: var(--brand-color-blue);
 }
 
 .container {
@@ -37,7 +51,7 @@ h1, h2, h3, h4, h5, h6, ul, p {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    outline: solid tomato;
+    /* outline: solid tomato; */
 }
 .section {
     padding-top: 94px;
@@ -48,19 +62,21 @@ h1, h2, h3, h4, h5, h6, ul, p {
     align-items: center;
 }
 
+
+.site-nav-element + .site-nav-element {
+    margin-left: 50px;
+}
+.site-nav-element>.link-off:hover,
+.site-nav-element>.link-off:focus, .current  {
+    color: var(--brand-color-blue);
+}
+
 .site-nav-element .link-off{
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.02em;    
-    color: #212121;
-}
-.site-nav-element + .site-nav-element {
-    margin-left: 50px;
-}
-.site-nav-element>.link-off:hover,
- .site-nav-element>.link-off:focus {
-    color: #2196F3;
+    
 }
 .auth-set {
     display: flex;
@@ -70,12 +86,13 @@ h1, h2, h3, h4, h5, h6, ul, p {
     margin-left: 50px;
 }
 .auth-set-item>.link-off {
-color: #757575;
+    font-weight: 500;
+    color: var(--brand-color-grey);
 }
 
 .auth-set-item>.link-off:hover,
 .auth-set-item>.link-off:focus {
-    color: #2196F3;
+    color: var(--brand-color-blue);
 }
 .header-page > .container {
     padding: 24px 0 25px 0;
@@ -92,6 +109,7 @@ color: #757575;
     background-color: #2F303A;;
 }
 .hero-title {
+    margin-bottom: 30px;
     font-weight: 900;
     font-size: 44px;
     line-height: 60px;
@@ -101,27 +119,63 @@ color: #757575;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     
-    color: #FFFFFF;
+    color: var(--brand-color-white);
 }
 /* Доопрацювати */
-.button {
+.button-hero {
+    
+    padding: 10px 32px;
     display: inline-block;
-    padding: 10px 32;
     font-weight: 700;
     font-size: 16px;
     line-height: 30px;
-    /* identical to box height, or 188% */
-    
-    /* display: block; */
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
     letter-spacing: 0.06em;
     
-    color: #FFFFFF;
-    background: #2196F3;
+    color: var(--brand-color-white);
+    
+    
+    background: var(--brand-color-blue);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 4px;
+}
+.button-hero:hover {
+    background: #188CE8;
+}
+
+
+.portfolio-button {
+    display: flex;
+    padding: 6px 22px;
+    
+    margin-left: 4px;
+    margin-right: 4px;
+    
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical to box height, or 162% */
+    
+    text-align: center;
+    letter-spacing: 0.03em;
+    
+    color: var(--brand-color-black);
+    background: #F5F4FA;
     border-radius: 4px;
     border: none;
+    
+}
+.button-list button:hover, 
+.button-list button:focus {
+
+    color: var(--brand-color-white);
+    background: var(--brand-color-blue);
+    
+    /* shadow-middle */    
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
 }
 
 /* Список статтей */
@@ -143,7 +197,7 @@ color: #757575;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     
-    color: #212121;
+    color: var(--brand-color-black);
 }
 .work-set-text {
     font-size: 14px;
@@ -151,7 +205,7 @@ color: #757575;
         /* or 171% */    
     letter-spacing: 0.03em;
     
-    color: #757575;
+    color: var(--brand-color-grey);
 }
 
 /* photo-list */
@@ -163,14 +217,12 @@ color: #757575;
     text-align: center;
     letter-spacing: 0.03em;
     
-    color: #212121;
+    color: var(--brand-color-black);
 }
 .photo-list {
     display: flex;
 }
-.photo-list-item {
-    
-}
+
 .photo-list-item + .photo-list-item {
     margin-left: 30px;
 }
@@ -186,7 +238,7 @@ color: #757575;
     display: flex;
 }
 .personal-set-item {
-    background: #FFFFFF;
+    background: var(--brand-color-white);
     /* material shadow v1 */
     
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -207,7 +259,7 @@ margin-left: 30px;
     text-align: center;
     letter-spacing: 0.03em;
     
-    color: #212121;
+    color: var(--brand-color-black);
 }
  .personal-set-text {
     margin-bottom: 30px;
@@ -218,5 +270,75 @@ margin-left: 30px;
     text-align: center;
     letter-spacing: 0.03em;
     
-    color: #757575;
+    color: var(--brand-color-grey);
+ }
+ /* Footer */
+ .footer-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: #2F303A;    
+ }
+ .footer-page .logo {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--brand-color-white);
+ }
+ 
+.address .link-off{
+    display: block;
+    font-style: normal;    
+    line-height: 1.5;    
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.6);
+}
+.address-item +  .address-item {
+    margin-top: 9px;
+  }
+.address-item .one {
+    color: var(--brand-color-white);
+}
+
+/* Portfolio */
+
+.button-list {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+.portfolio-card-set {
+    margin-left: -30px;
+    margin-top: -30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+ .portfolio-card-item {
+    margin-top: 30px;
+    margin-left: 30px;
+    /* outline:  solid tomato; */
+ }
+ .portfolio-card-title {
+    margin-bottom:4px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 36px;
+    /* identical to box height, or 200% */
+    
+    letter-spacing: 0.06em;
+    
+    color: var(--brand-color-black);
+ }
+ .portfolio-card-text {
+    font-size: 16px;
+    line-height: 30px;
+    /* identical to box height, or 188% */
+
+    letter-spacing: 0.03em;
+
+    color: var(--brand-color-grey);
+ }
+ .portfolio-card-frame {
+    padding: 20px 24px;
+    border: 1px solid #EEEEEE;
+    border-top: none;
+
  }
